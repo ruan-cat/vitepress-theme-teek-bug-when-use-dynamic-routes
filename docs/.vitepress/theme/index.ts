@@ -4,6 +4,8 @@ import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import "./style.css";
 
+import ProjectDomainDisplay from "../components/ProjectDomainDisplay.vue";
+
 export default {
   extends: DefaultTheme,
   Layout: () => {
@@ -12,6 +14,7 @@ export default {
     });
   },
   enhanceApp({ app, router, siteData }) {
+    app.component("ProjectDomainDisplay", ProjectDomainDisplay);
     // ...
   },
 } satisfies Theme;
