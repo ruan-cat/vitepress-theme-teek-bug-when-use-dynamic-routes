@@ -9,6 +9,7 @@ const { params } = useData();
 // console.log(params.value);
 
 // 获取当前项目名称
+// @ts-ignore
 const currentProject = computed(() => params.value.project as string);
 
 // 获取当前项目的详细信息
