@@ -6,7 +6,7 @@ import { projects } from "../../../src/types";
 
 const { params } = useData();
 
-// console.log(params.value);
+console.log(params.value);
 
 // 获取当前项目名称
 // @ts-ignore

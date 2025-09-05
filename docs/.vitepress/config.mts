@@ -2,12 +2,22 @@ import { defineConfig } from "vitepress";
 
 import { defineTeekConfig } from "vitepress-theme-teek/config";
 
-// Teek 主题配置
-const teekConfig = defineTeekConfig({});
+/**
+ * Teek 主题配置
+ * @see https://github.com/Kele-Bingtang/vitepress-theme-teek/issues/142#issuecomment-3253633719
+ */
+const teekConfig = defineTeekConfig({
+  vitePlugins: {
+    // sidebar: false, // 禁用自动生成侧边栏
+    sidebarOption: {
+      type: "array", // 修改侧边栏生成类型
+    },
+  },
+});
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  // extends: teekConfig,
+  extends: teekConfig,
 
   title: "My Awesome Project",
   description: "A VitePress Site",
