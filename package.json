@@ -13,7 +13,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.15.1",
   "devDependencies": {
-    "vitepress": "2.0.0-alpha.12",
+    "vitepress": "^1.6.4",
     "vitepress-theme-teek": "^1.4.6"
   },
   "dependencies": {
