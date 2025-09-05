@@ -2,6 +2,8 @@ import { defineConfig } from "vitepress";
 
 import { defineTeekConfig } from "vitepress-theme-teek/config";
 
+import llmstxt from "vitepress-plugin-llms";
+
 /**
  * Teek 主题配置
  * @see https://github.com/Kele-Bingtang/vitepress-theme-teek/issues/142#issuecomment-3253633719
@@ -64,5 +66,11 @@ export default defineConfig({
       open: true,
       port: 9000,
     },
+
+    plugins: [
+      /** @see https://github.com/okineadev/vitepress-plugin-llms */
+      // @ts-ignore FIXME: 暂时不使用 该插件引发了故障
+      // llmstxt(),
+    ],
   },
 });
