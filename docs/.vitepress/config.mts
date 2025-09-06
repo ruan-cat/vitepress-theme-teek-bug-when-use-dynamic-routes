@@ -72,7 +72,7 @@ const config = defineConfig({
 
     plugins: [
       /** @see https://github.com/okineadev/vitepress-plugin-llms */
-      // @ts-ignore FIXME: 暂时不使用 该插件引发了故障
+      // @ts-ignore 该插件需要配置 ignoreFiles 来排除某些文件
       llmstxt(),
     ],
   },
