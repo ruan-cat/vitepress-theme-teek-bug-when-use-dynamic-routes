@@ -2,7 +2,9 @@ import { defineConfig } from "vitepress";
 
 import { defineTeekConfig } from "vitepress-theme-teek/config";
 
-import llmstxt from "vitepress-plugin-llms";
+import llmstxt, {
+  copyOrDownloadAsMarkdownButtons,
+} from "vitepress-plugin-llms";
 
 import { ExtraConfig } from "./types";
 import { handlePlugins } from "./plugins";
@@ -75,6 +77,12 @@ const config = defineConfig({
       // @ts-ignore 该插件需要配置 ignoreFiles 来排除某些文件
       llmstxt(),
     ],
+  },
+
+  markdown: {
+    config: (md) => {
+      md.use(copyOrDownloadAsMarkdownButtons);
+    },
   },
 });
 
