@@ -4,6 +4,9 @@ import { defineTeekConfig } from "vitepress-theme-teek/config";
 
 import llmstxt from "vitepress-plugin-llms";
 
+import { ExtraConfig } from "./types";
+import { handlePlugins } from "./plugins";
+
 /**
  * Teek 主题配置
  * @see https://github.com/Kele-Bingtang/vitepress-theme-teek/issues/142#issuecomment-3253633719
@@ -18,7 +21,7 @@ const teekConfig = defineTeekConfig({
 });
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+const config = defineConfig({
   extends: teekConfig,
 
   title: "My Awesome Project",
@@ -70,7 +73,17 @@ export default defineConfig({
     plugins: [
       /** @see https://github.com/okineadev/vitepress-plugin-llms */
       // @ts-ignore FIXME: 暂时不使用 该插件引发了故障
-      // llmstxt(),
+      llmstxt(),
     ],
   },
 });
+
+handlePlugins(config, {
+  plugins: {
+    llmstxt: {
+      ignoreFiles: ["domain/**"],
+    },
+  },
+});
+
+export default config;
